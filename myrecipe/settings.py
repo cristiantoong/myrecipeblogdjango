@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o+9u!*5m0cz5_#e!&dklabo!0)-m%a64y65f=(zfh#6zl(l$_%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['127.0.0.1']
-#ALLOWED_HOSTS = ['ctoong-myrecipeblog.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['ctoong-myrecipeblog.herokuapp.com', '127.0.0.1']
 
 # if DEBUG:
 #     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #during dev only
