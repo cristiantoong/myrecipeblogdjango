@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o+9u!*5m0cz5_#e!&dklabo!0)-m%a64y65f=(zfh#6zl(l$_%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1']
-ALLOWED_HOSTS = ['ctoong-myrecipeblog.herokuapp.com', '127.0.0.1']
+#ALLOWED_HOSTS = ['ctoong-myrecipeblog.herokuapp.com', '127.0.0.1']
 
 # if DEBUG:
 #     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #during dev only
@@ -48,7 +48,9 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'widget_tweaks',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+
+    'storages',
 ]
 
 CKEDITOR_CONFIGS = {
@@ -188,3 +190,54 @@ EMAIL_HOST_USER = 'test40064009@gmail.com'
 EMAIL_HOST_PASSWORD = 'test4006!'
 # EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+
+
+#S3 BUCKETS CONFIG
+
+# AWS_ACCESS_KEY_ID = 'AKIATVNXRUZFCBL7P3FM'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'ctoong-myrecipe2-bucket'
+
+# AWS_DEFAULT_ACL = 'public-read'
+
+# #django-storages
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_QUERYSTRING_AUTH = False
+
+
+
+
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+'''
+
+'''
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "POST",
+            "GET",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ]
+    }
+]
+'''
+

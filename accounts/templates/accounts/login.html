@@ -217,55 +217,7 @@
   </section>
 
   <script>
-    // Featured recipe slider
-    let slideIndex = 0;
-
-
-    function showSlides() {
-        const slides = document.getElementsByClassName("slider");
-        console.log(slides.length)
-
-        for(let i=0; i< slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        slideIndex++;
-
-        if(slideIndex > slides.length ) {
-            slideIndex = 1;
-        }
-
-
-
-        slides[slideIndex - 1].style.display = "block";
-
-
-        setTimeout(showSlides, 5000);
-    }
-
-
-    showSlides();
-
-    // toggle eye show password
-    const password = document.querySelector('.password-toggle');
-    const toggleEye = document.querySelector('.toggle-eye-crossed');
-
-    function showHidePassword() {
-        if(password.type === 'password'){
-            password.setAttribute('type', 'text');
-            toggleEye.classList.add('hide');
-            toggleEye.classList.remove('toggle-eye-crossed');
-            toggleEye.classList.add('toggle-eye');
-        }
-        else {
-            password.setAttribute('type', 'password');
-            toggleEye.classList.add('show');
-            toggleEye.classList.remove('toggle-eye');
-            toggleEye.classList.add('toggle-eye-crossed');
-        }
-    }
-
-    toggleEye.addEventListener('click', showHidePassword);
+    
   </script>
   
 {% endblock content %}
