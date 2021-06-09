@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load static %}
 
 
 {% block title %}
@@ -18,7 +19,12 @@
       <div class="about-me">
         <h3>About Me</h3>
         <div class="profile-img">
+
+
           <img src="{{ profile.avatar.url }}" alt="">
+
+            
+          
         </div>
         <div class="profile-name">
           <p>{{ profile.first_name|title }} {{ profile.last_name|title }}</p>
